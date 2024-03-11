@@ -2,6 +2,10 @@ st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.
 
+With some modifications that I need:
+- Ctrl + Y = paste
+- Ctrl + j = Vim-mode
+
 
 Requirements
 ------------
