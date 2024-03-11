@@ -153,7 +153,7 @@ ExitState kPressHist(char const *cs, size_t len, int ctrl, KeySym const *kSym) {
 	int const prevYOff=IS_SET(MODE_ALTSCREEN)?0:histOff, search=state.m.search&&state.m.active,
 	          prevAltToggle=altToggle, prevOverlay=overlay;
 	int const noOp=!state.cmd.op&&!state.cmd.infix, num=len==1&&BETWEEN(cs[0],48,57),
-	          esc=kSym&&*kSym==XK_q, ret=(kSym&&*kSym==XK_Return)||(len==1&&cs[0]=='\n'),
+	          esc=kSym&&(*kSym==XK_q||*kSym==XK_Escape||*kSym==XK_y), ret=(kSym&&*kSym==XK_Return)||(len==1&&cs[0]=='\n'),
 	          quantifier=num&&(cs[0]!='0'||state.m.c), ins=!search &&noOp &&len &&cs[0]=='i';
 	exited = 0;
 	ExitState result = success;
